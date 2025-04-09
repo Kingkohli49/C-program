@@ -146,20 +146,89 @@ int main(){
     lexical_Analyzer(input);
 }
 
-// void readFromFileAndAnalyze(const char *filename) {
-//     FILE *fp = fopen(filename, "r");
-//     if (fp == NULL) {
-//         printf("Error: Could not open input file.\n");
-//         return;
-//     }
 
-//     char line[MAX_LENGTH * 4]; // Read one line at a time
-//     char fullCode[BUFFER_SIZE] = ""; // Accumulate full code here
 
-//     while (fgets(line, sizeof(line), fp) != NULL) {
-//         strcat(fullCode, line);
-//     }
+// Identifiers ka code yaha se
 
-//     fclose(fp);
-//     lexical_Analyzer(fullCode);
-// }
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAX_LINE 1000
+
+// List of C keywords
+const char *keywords[] = {
+    "auto", "break", "case", "char", "const", "continue", "default",
+    "do", "double", "else", "enum", "extern", "float", "for", "goto",
+    "if", "inline", "int", "long", "register", "restrict", "return",
+    "short", "signed", "sizeof", "static", "struct", "switch", "typedef",
+    "union", "unsigned", "void", "volatile", "while", "_Alignas",
+    "_Alignof", "_Atomic", "_Bool", "_Complex", "_Generic", "_Imaginary",
+    "_Noreturn", "_Static_assert", "_Thread_local"
+};
+
+int is_keyword(const char *word) {
+    for (int i = 0; i < sizeof(keywords)/sizeof(keywords[0]); i++) {
+        if (strcmp(word, keywords[i]) == 0)
+            return 1;
+    }
+    return 0;
+}
+
+int is_valid_identifier(const char *str) {
+    if (!(isalpha(str[0]) || str[0] == '_'))
+        return 0;
+    for (int i = 1; str[i] != '\0'; i++) {
+        if (!(isalnum(str[i]) || str[i] == '_'))
+            return 0;
+    }
+    return !is_keyword(str);
+}
+
+int main() {
+    FILE *in, *out;
+    char filename[100], line[MAX_LINE];
+    int line_num = 0;
+
+    printf("Enter the C program file name: ");
+    scanf("%s", filename);
+
+    in = fopen(filename, "r");
+    if (!in) {
+        perror("Failed to open input file");
+        return 1;
+    }
+
+    out = fopen("identifier_output.txt", "w");
+    if (!out) {
+        perror("Failed to create output file");
+        fclose(in);
+        return 1;
+    }
+
+    printf("\n--- Identifier Checking Line by Line ---\n");
+    while (fgets(line, sizeof(line), in)) {
+        line_num++;
+        char *token = strtok(line, " \t\n;(){}[]<>=+-*/%,\"'");
+        printf("Line %d:\n", line_num);
+        fprintf(out, "Line %d:\n", line_num);
+
+        while (token != NULL) {
+            if (is_valid_identifier(token)) {
+                printf("   Valid Identifier: %s\n", token);
+                fprintf(out, "   Valid Identifier: %s\n", token);
+            } else {
+                printf("   Invalid Identifier: %s\n", token);
+                fprintf(out, "   Invalid Identifier: %s\n", token);
+            }
+            token = strtok(NULL, " \t\n;(){}[]<>=+-*/%,\"'");
+        }
+    }
+
+    fclose(in);
+    fclose(out);
+    printf("\n Check 'identifier_output.txt' for output.\n");
+
+    return 0;
+}
+
