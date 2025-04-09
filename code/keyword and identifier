@@ -232,3 +232,57 @@ int main() {
     return 0;
 }
 
+
+//on terminal
+
+nano lexical_analyzer.c       # Paste lexical analyzer code
+gcc lexical_analyzer.c -o lexical_analyzer
+./lexical_analyzer
+
+cat identifierFile.txt        # View identifiers
+cat keywordFile.txt           # View keywords
+cat operatorFile.txt          # View operators
+cat separatorFile.txt         # View separators
+cat numberFile.txt            # View numbers
+
+nano identifier_checker.c     # Paste identifier checker code
+nano test_input.c             # Paste test C program (like: int main() {...})
+gcc identifier_checker.c -o identifier_checker
+./identifier_checker          # When prompted, type: test_input.c
+
+cat identifier_output.txt     # View the final identifier analysis output
+
+
+
+on terminal or full steps 
+
+You want to run these two programs correctly in a Linux terminal. Here's the complete step-by-step guide to compile and execute both.
+
+🧪 Step-by-Step Execution
+✅ Part 1: Lexical Analyzer
+Step	Command	Description
+1	nano lexical_analyzer.c	Create and open file
+2	(Paste the lexical analyzer code)	Paste the full first code block
+3	Ctrl + O, Enter, Ctrl + X	Save and exit nano
+4	gcc lexical_analyzer.c -o lexical_analyzer	Compile the program
+5	./lexical_analyzer	Run the lexical analyzer
+6	cat identifierFile.txt	View identifiers found
+7	cat keywordFile.txt	View keywords found
+8	cat operatorFile.txt	View operators found
+9	cat separatorFile.txt	View separators found
+10	cat numberFile.txt	View numbers found
+✅ After this, you will have 5 output files generated.
+
+✅ Part 2: Identifier Checker
+Step	Command	Description
+1	nano test_input.c	Create a test file for identifier checker
+2	(Copy and paste the same input string from the lexical analyzer’s main() into this file)	It acts as test input
+3	Ctrl + O, Enter, Ctrl + X	Save and exit
+4	nano identifier_checker.c	Open the identifier checker source file
+5	(Paste the second full C code you provided — Identifier Checker)	
+6	Ctrl + O, Enter, Ctrl + X	Save and exit
+7	gcc identifier_checker.c -o identifier_checker	Compile the program
+8	./identifier_checker	Run it
+9	(When asked, enter) test_input.c	Input the file created above
+10	cat identifier_output.txt	View the result in output file
+

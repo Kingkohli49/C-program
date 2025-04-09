@@ -101,3 +101,9 @@ int main(){
         printf("String not recognized");
     }
 }
+   terminal code
+
+1   nano string_recognizer.c	Create and edit the C file
+2	(Paste your code & save with Ctrl+O, Enter, then Ctrl+X)	Save the file in nano editor
+3	gcc string_recognizer.c -o string_recognizer	Compile the C program into an executable
+4	./string_recognizer	Run the compiled C program

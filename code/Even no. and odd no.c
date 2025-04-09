@@ -32,3 +32,18 @@ int main() {
 
 //input.txt
 1 2 3 4 5 6 7 8 9
+
+
+ //on terminal 
+ Step	Command	Explanation
+1️⃣	nano even_odd.c	Create and open the file in nano text editor
+✍️	(Paste your C program)	Paste the code from your message
+💾	Ctrl + O → Enter → Ctrl + X	Save and exit nano
+2️⃣	nano input.txt	Create the input file
+✍️	(Paste this)
+1 2 3 4 5 6 7 8 9	Your input numbers
+💾	Ctrl + O → Enter → Ctrl + X	Save and exit
+3️⃣	gcc even_odd.c -o even_odd	Compile the program
+4️⃣	./even_odd	Run the program
+5️⃣	cat even.txt	View the even numbers output file
+6️⃣	cat odd.txt	View the odd numbers output file

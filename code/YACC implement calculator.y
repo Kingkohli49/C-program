@@ -59,3 +59,12 @@ int main() {
 }
 
 
+
+//on terminal
+Step	Command	Explanation
+1	nano calc.y	Create and save your code in a file
+2	yacc -d calc.y	Convert Yacc file to C (y.tab.c, y.tab.h)
+3	gcc y.tab.c -o calc	Compile to executable named calc
+4	./calc	Run the compiled calculator
+5	Type expressions	Evaluate arithmetic inputs like 3 + 5 * 2
+

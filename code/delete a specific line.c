@@ -52,3 +52,16 @@ Watermelon
 Papaya
 Guava
 Litchi
+
+//on terminal
+Step	Command	Explanation
+1️⃣	nano delete_line.c	Open nano editor to write your C code
+✍️	(Paste your C code)	Paste your code inside nano
+💾	Ctrl + O → Enter → Ctrl + X	Save the file and exit nano
+2️⃣	nano input.txt	Create the input file to test your code
+✍️	(Type some lines like: Hello, World, Line 3, Line 4)	Provide sample content
+💾	Ctrl + O → Enter → Ctrl + X	Save the input.txt file
+3️⃣	gcc delete_line.c -o delete_line	Compile your C code into an executable
+4️⃣	./delete_line	Run the program
+🧾	(Enter line number when prompted)	Example: 2 to delete second line
+5️⃣	cat output.txt	View the content of the updated file

@@ -58,3 +58,13 @@ It contains multiple lines.
 
 Each line has some words.
 Count them properly.
+
+
+
+On terminalStep	Command	Purpose
+1	nano count_stats.c	Open editor to write your C code
+—	(Paste your code, then save: Ctrl+O, Enter, Ctrl+X)	Save and exit nano
+2	nano s1.txt	Create the input text file s1.txt
+—	(Paste your sample text, then save the file)	Save and exit nano
+3	gcc count_stats.c -o count_stats	Compile the C code into an executable
+4	./count_stats	Run the executable which reads s1.txt

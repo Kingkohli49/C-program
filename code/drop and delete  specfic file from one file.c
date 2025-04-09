@@ -66,3 +66,25 @@ file
 some
 deleted
 
+
+
+//on terminal
+
+Step	Command	Explanation
+1️⃣	nano delete_words.c	Create and open the file in nano text editor
+✍️	(Paste your C code)	Paste the full C program you posted
+💾	Ctrl + O → Enter → Ctrl + X	Save and exit nano
+2️⃣	nano source.txt	Create the input file (source text)
+✍️	(Paste this)
+This is a sample file which contains some words that need to be deleted from the file.	Your sample input
+💾	Ctrl + O → Enter → Ctrl + X	Save and exit
+3️⃣	nano delete.txt	Create the file with words to delete
+✍️	(Paste this)
+is
+file
+some
+deleted	Words to be deleted
+💾	Ctrl + O → Enter → Ctrl + X	Save and exit
+4️⃣	gcc delete_words.c -o delete_words	Compile the C file into an executable
+5️⃣	./delete_words	Run your program
+6️⃣	cat output.txt	View the output file with deleted words removed

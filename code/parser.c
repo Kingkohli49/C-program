@@ -89,6 +89,18 @@ int main() {
     return 0;
 }
 
+
+//on terminal
+
+Step	Command	Purpose
+1	nano parser.c	Create and open a C file named parser.c
+2	(Paste your parser code inside)	Paste the entire code you provided
+3	Ctrl + O, Enter, Ctrl + X	Save and exit the nano editor
+4	gcc parser.c -o parser	Compile the program using GCC
+5	./parser	Run the executable
+6	(Enter an expression like id+id*id)	Provide input when prompted
+
+
 //Shift reducing parser 
 #include <stdio.h>
 #include <string.h>
@@ -135,3 +147,12 @@ int main() {
 
     return 0;
 }
+
+// on terminal
+Step	Command	Purpose
+1	nano shift_reduce_parser.c	Create and open the source file
+2	(Paste your Shift Reduce Parser code)	Inside nano editor
+3	Ctrl + O, Enter, Ctrl + X	Save and exit the editor
+4	gcc shift_reduce_parser.c -o parser	Compile the code
+5	./parser	Run the compiled program
+6	(Enter a string like ab or abab)	Provide input when prompted

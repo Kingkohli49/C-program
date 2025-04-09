@@ -32,3 +32,15 @@ int main() {
 
      return 0;
 }
+
+
+// on termianl
+
+Step	Terminal Command	Description
+1	nano student_writer.c	Create and open the C file
+2	(Paste your C code inside)	Add your full code
+3	Ctrl + O, Enter, Ctrl + X	Save and exit nano
+4	gcc student_writer.c -o student_writer	Compile the code using GCC
+5	./student_writer	Run the executable
+6	(Provide input as asked)	Enter number of students, names, and marks
+7	cat student.txt	View the contents of the output file
